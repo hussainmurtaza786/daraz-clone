@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -7,9 +12,14 @@
     padding: 20px 12px;
 }
 
+.header>img {
+    width: 120px;
+    margin: 4px 12px;
+}
+
 .header hr {
     margin: 4px 8px;
-    width: 2px;
+    width: 0.25px;
     height: 12px;
     background-color: white;
 }
@@ -18,7 +28,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
 }
 
 .search-bar {
@@ -26,11 +35,29 @@
 }
 
 .search-bar input {
+    font-size: 15px;
+    color: grey;
     padding: 15px 20px;
     border: 1px solid #ccc;
     border-radius: 12px;
-    width: 40rem;
+    width: 50rem;
+    height: 0.75rem;
 
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    margin: 0px 18px;
+}
+
+.login label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.log-sig {
+    display: flex;
 }
 
 .search-bar button {
@@ -44,13 +71,19 @@
 }
 
 .btn {
-    background-color: orange; /* Set the background color */
+    background-color: orange;
+    /* Set the background color */
     border: none;
     cursor: pointer;
-  }
-  
-  /* Optional: Hover styles */
-  .btn:hover {
-    opacity: 0.8;
-  }
- 
+}
+
+
+
+.signUp {
+    margin: 0px 18px;
+}
+
+.signUp label {
+    font-size: 12px;
+    font-weight: bold;
+}

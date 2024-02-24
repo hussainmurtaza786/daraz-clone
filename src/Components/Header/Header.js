@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './Header.module.css'
 import LoginIcon from './LoginIcon'
+import CartIcon from '../Cart/CartIcon'
 function Header() {
     return (
         <div className={style.header}>
@@ -11,17 +12,22 @@ function Header() {
                     <button className={style.btn}>
                         <img className={style.img} src="https://logowik.com/content/uploads/images/search7780.jpg" width={'30px'} alt="Search" />
                     </button>
-                </div>=
-                <div className="login">
+                </div>
+            </div>
+            <div className={style['log-sig']}>
+                <div className={style.login}>
                     <LoginIcon />
-                    <label >Login</label>
+                    <label > Login</label>
                 </div>
                 <hr />
-                <label >SignUp</label>
+                <div className={style.signUp}>
+                    <label >SignUp</label>
+                </div>
             </div>
-
+            <CartIcon />
         </div>
     )
 }
+
 
 export default Header

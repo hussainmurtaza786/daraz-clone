@@ -1,0 +1,15 @@
+.items {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+
+}
+
+.image img {
+    width: 100px;
+}
+
+.description p {
+    font-size: 10px;
+}
