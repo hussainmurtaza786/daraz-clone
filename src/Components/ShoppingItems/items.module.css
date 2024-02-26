@@ -25,29 +25,3 @@
     color: RED;
 }
 
-.order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.order button:nth-child(1) {
-    margin: 2px 4px;
-    border: 1px solid gray;
-    background-color: #2ABBE8;
-    border-radius: 12px;
-    width: 100%;
-    font-size: 15px;
-    padding: 2px 8px;
-
-}
-
-.order button:nth-child(2) {
-    border: 1px solid gray;
-    background-color: #F57724;
-    border-radius: 12px;
-    padding: 2px;
-    width: 100%;
-    font-size: 15px;
-
-}

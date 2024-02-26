@@ -12,6 +12,14 @@
     padding: 20px 12px;
 }
 
+.cartbtn {
+    background-color: rgb(248, 90, 27);
+    border: none;
+}
+.cartbtn img {
+color: white;
+}
+
 .header>img {
     width: 120px;
     margin: 4px 12px;

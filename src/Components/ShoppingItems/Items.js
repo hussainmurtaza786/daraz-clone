@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './items.module.css';
+import ItemForm from './ItemForm';
 
 function Items({ dummy }) {
     const dummyData = [
@@ -104,10 +105,7 @@ function Items({ dummy }) {
                         <p>{item.description}</p>
                         <p>Rs.{item.price}</p>
                     </div>
-                    <div className={style.order}>
-                        <button>BuyNow</button>
-                        <button>Add To Cart</button>
-                    </div>
+                    <ItemForm/>
 
                 </div>
             ))}
