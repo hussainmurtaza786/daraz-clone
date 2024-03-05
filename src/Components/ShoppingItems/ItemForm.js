@@ -2,17 +2,18 @@ import React, { useContext } from 'react'
 import style from './ItemForm.module.css'
 import CartContext from '../../Store/Cart-Context'
 
-function ItemForm() {
-    const ctx = useContext(CartContext)
-    const onSubmit = (event) => {
+function ItemForm({ item }) {
+    const { addItem } = useContext(CartContext)
+    const onAddToCart = (event) => {
         event.preventDefault()
-        console.log('its submited')
+        addItem(item)
+        console.log('add to cart')
     }
     return (
-        <form onSubmit={onSubmit} >
+        <form  >
             <div className={style.order}>
                 <button>BuyNow</button>
-                <button>Add To Cart</button>
+                <button onClick={onAddToCart}>Add To Cart  </button>
             </div>
         </form>
     )

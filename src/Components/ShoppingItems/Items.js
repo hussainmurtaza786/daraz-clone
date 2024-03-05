@@ -105,7 +105,7 @@ function Items({ dummy }) {
                         <p>{item.description}</p>
                         <p>Rs.{item.price}</p>
                     </div>
-                    <ItemForm/>
+                    <ItemForm item={item} />
 
                 </div>
             ))}

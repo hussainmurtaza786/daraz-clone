@@ -4,13 +4,6 @@ import LoginIcon from './LoginIcon'
 import CartIcon from '../Cart/CartIcon'
 function Header(props) {
 
-    const [showCart, setShowCart] = useState(false)
-
-    const cartIsShown = () => {
-        if (setShowCart(true)) {
-            alert("the value is true")
-        }
-    }
 
     return (
         <div className={style.header}>
@@ -35,7 +28,7 @@ function Header(props) {
                     <label >SignUp</label>
                 </div>
             </div>
-            <button className={style.cartbtn} onClick={cartIsShown} >
+            <button onClick={toggleCartVisibility} className={style.cartbtn}  >
                 <CartIcon />
             </button>
         </div>
