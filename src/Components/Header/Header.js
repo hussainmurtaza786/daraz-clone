@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './Header.module.css'
 import LoginIcon from './LoginIcon'
 import CartIcon from '../Cart/CartIcon'
+import HeaderCartBUtton from './HeaderCartButton'
 function Header(props) {
 
 
@@ -28,9 +29,7 @@ function Header(props) {
                     <label >SignUp</label>
                 </div>
             </div>
-            <button onClick={toggleCartVisibility} className={style.cartbtn}  >
-                <CartIcon />
-            </button>
+            <HeaderCartBUtton onClick={props.onShowCart} />
         </div>
     )
 }

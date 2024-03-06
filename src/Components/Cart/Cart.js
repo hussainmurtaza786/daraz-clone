@@ -24,12 +24,16 @@ const Cart = props => {
 
     const cartItems = (<ul className={style['cart-items']}>
         {cartCtx.items.map((item) => (<CartItem key={item.id} name={item.name} amount={item.amount}
-            price={item.price} onFullRemove={() => cartFullItemRemovedHandler(item.id)} onRemove={() => cartItemRemovedHandler(item.id)} onAdd={() => cartItemAddHandler(item)} />))}
+            price={item.price} onFullRemove={() => cartFullItemRemovedHandler(item.id)} 
+            onRemove={() => cartItemRemovedHandler(item.id)} onAdd={() => cartItemAddHandler(item)} />))}
     </ul>
     )
+
+    console.log(cartCtx.items)
+
     return (
         <Modal onClose={props.onClose}>
-                 
+
             {cartItems}
             <div className={style.total}>
                 <span>Total Amount</span>

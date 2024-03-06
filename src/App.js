@@ -5,23 +5,23 @@ import SlidingGallery from './Components/Sliding-Images/SlidingGallery';
 import Items from './Components/ShoppingItems/Items';
 import { useState } from 'react';
 import CartProvider from './Store/CartProvider';
+import Cart from './Components/Cart/Cart';
 
 function App() {
 
   const [cartIsShown, setCartIsShown] = useState(false)
 
   const showCartHandler = () => {
-    console.log('value is true ==>', showCartHandler)
     setCartIsShown(true)
   }
   const hideCartHandler = () => {
     setCartIsShown(false)
   }
 
-
   return (
     <CartProvider>
-      <Header />
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
       <SlidingGallery />
       <Items />
     </CartProvider>
