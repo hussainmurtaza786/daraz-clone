@@ -10,7 +10,7 @@ function Items(props) {
     // const price = props.price + 'rs'
 
     const addToCartHandler = (index, amount) => {
-        console.log(cartCtx.products[index])
+        // console.log(cartCtx.products[index])
         cartCtx.addItem({
             id: cartCtx.products[index].id,
             name: cartCtx.products[index].name,
@@ -19,9 +19,11 @@ function Items(props) {
         })
     }
 
+    // console.log(cartCtx.products)
+
     return (
         <div className={style.container}>
-        <AddItems/>
+            <AddItems onAddItem={cartCtx.addNewItems} />
             <div className={style.items}>
                 {cartCtx.products.map((item, index) => (
                     <div key={index} className={style.item}>

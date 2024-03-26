@@ -112,7 +112,7 @@ const cartReducer = (state, action) => {
         const updatedTotalAmount = state.totalAmount + action.item.price
         const existingCartItemIndex = state.items.findIndex(item => item.id === action.item.id)
         const existingCartItem = state.items[existingCartItemIndex];
-        console.log('existingCartItemIndex -->'+existingCartItemIndex,'existingCartItem -->'+ existingCartItem)
+        console.log('existingCartItemIndex -->' + existingCartItemIndex, 'existingCartItem -->' + existingCartItem)
         let updatedItems = [];
 
         if (existingCartItem) {
@@ -153,6 +153,7 @@ const cartReducer = (state, action) => {
 
         }
         return {
+            ...state,
             items: updatedItems,
             totalAmount: updatedTotalAmount
         }
@@ -162,10 +163,21 @@ const cartReducer = (state, action) => {
         const updatedTotalAmount =
             state.totalAmount - state.items.find(item => item.id === action.id).price * state.items.find(item => item.id === action.id).amount;
         return {
+            ...state,
             items: updatedItems,
             totalAmount: updatedTotalAmount
         };
     }
+        if (action.type === 'ADD_NEW_ITEM') {
+            // Add the new item to the products list
+            return {
+                ...state,
+                products: state.products.concat(action.item)
+            };
+        }
+    
+
+    
 
     return state;
 };
@@ -182,14 +194,18 @@ const CartProvider = (props) => {
     const removeFUllItemFromCartHanlder = (id) => {
         dispatchCartAction({ type: 'fullRemove', id: id })
     }
-    console.log(cartState.products)
+    const addNewItemHandler = (newItem) => {
+        dispatchCartAction({ type: 'ADD_NEW_ITEM', item: newItem });
+    };
+    // console.log(cartState.products)
     const cartContext = {
         items: cartState.items,
         products: cartState.products,
         totalAmount: cartState.totalAmount,
         addItem: addItemToCartHandler,
         removeItem: removeItemToCartHandler,
-        removeFullItem: removeFUllItemFromCartHanlder
+        removeFullItem: removeFUllItemFromCartHanlder,
+        addNewItems:addNewItemHandler
     };
 
     return (
