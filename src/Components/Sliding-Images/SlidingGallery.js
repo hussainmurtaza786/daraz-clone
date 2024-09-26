@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import style from './SlidingGallery.module.css'
+import style from './SlidingGallery.module.css';
 import GalleryText from "./GalleryText";
 
 const SlidingGallery = () => {
@@ -28,27 +28,36 @@ const SlidingGallery = () => {
         const numSlides = slides.length;
         setCurrentIndex((prevIndex) => (prevIndex + direction + numSlides) % numSlides);
     };
-    const prevSlide = () => {
-        moveSlide(-1);
+
+    const setSlide = (index) => {
+        setCurrentIndex(index);
     };
 
-    const nextSlide = () => {
-        moveSlide(1);
-    };
     return (
         <div className={style.gallery}>
+            <div className="text">
             <GalleryText />
-            <button onClick={prevSlide}>{'<'} </button>
-            <div className={style["carousel-container"]}>
-                <div className={style["carousel-track"]} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                    {slides.map(slide => (
-                        <div className={style["carousel-item"]} key={slide.id}>
-                            <img src={slide.src} alt={slide.alt} />
-                        </div>
+            </div>
+            <div className={style.slideContainer}>
+                <div className={style["carousel-container"]}>
+                    <div className={style["carousel-track"]} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                        {slides.map(slide => (
+                            <div className={style["carousel-item"]} key={slide.id}>
+                                <img src={slide.src} alt={slide.alt} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className={style.pagination}>
+                    {slides.map((_, index) => (
+                        <span
+                            key={index}
+                            className={`${style.dot} ${currentIndex === index ? style.active : ""}`}
+                            onClick={() => setSlide(index)}
+                        ></span>
                     ))}
                 </div>
             </div>
-            <button onClick={nextSlide}>{'>'}</button>
         </div>
     );
 }

@@ -4,14 +4,16 @@
     border: none;
     background-color: rgb(255, 143, 99);
     color: white;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 25px;
     font-weight: bold;
 }
-
+.container{
+    margin: 0px 8px;
+}
 .button:hover,
 .button:active {
     background-color: #f9733a;

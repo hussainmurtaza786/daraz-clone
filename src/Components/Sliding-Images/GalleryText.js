@@ -1,46 +1,23 @@
 import React from 'react'
 import style from './GalleryText.module.css'
+
 function GalleryText() {
+    const listItem = ["Groceries & Pets", "Health & Beauty", "Men's Fashion", 
+        "Women's Fashion", "Mother & Baby", "Home & Lifestyle", "Electronic Devices", 
+        "Electronic Accessories", "TV & Home Appliances", "Sports & Outdoor", 
+        "Watches, Bags & Jewellery", "Automotive & Motorbike"];
+
     return (
-        <div className={style.text}>
-            <p>
-                Groceries & Pets
-            </p>
-            <p>
-                Health & Beauty
-            </p>
-            <p>
-                Men's Fashion
-            </p>
-            <p>
-                Women's Fashion
-            </p>
-            <p>
-                Mother & Baby
-            </p>
-            <p>
-                Home & Lifestyle
-            </p>
-            <p>
-                Electronic Devices
-            </p>
-            <p>
-                Electronic Accessories
-            </p>
-            <p>
-                TV & Home Appliances
-            </p>
-            <p>
-                Sports & Outdoor
-            </p>
-            <p>
-                Watches, Bags & Jewellery
-            </p>
-            <p>
-                Automotive & Motorbike
-            </p>
+        <div className={style.container}>
+            <div className={style.text}>
+                {listItem.map((list, index) => (
+                    <p key={index}>
+                        {list}
+                    </p>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
 
-export default GalleryText
+export default GalleryText;

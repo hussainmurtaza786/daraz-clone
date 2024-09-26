@@ -19,7 +19,7 @@ const HeaderCartBUtton = (props) => {
         setBtnIsHighlighted(true)
 
         const timer = setTimeout(() => {
-            setBtnIsHighlighted(false)
+            setBtnIsHighlighted(false) 
 
         }, 300)
 
@@ -28,14 +28,12 @@ const HeaderCartBUtton = (props) => {
         }
     }, [items])
     return (
-        <div>
+        <div className={style.container}>
             <button className={btnClasses} onClick={props.onClick}>
                 <span className={style.icon}>
                     <CartIcon />
                 </span>
-                <span>
-                    Your Cart
-                </span>
+            
                 <span className={style.badge}>
                     {numberOfCartItems}
                 </span>

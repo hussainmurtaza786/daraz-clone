@@ -23,7 +23,7 @@ function App() {
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <SlidingGallery />
-      <Items />
+      <Items onClose={hideCartHandler} />
     </CartProvider>
 
   );
